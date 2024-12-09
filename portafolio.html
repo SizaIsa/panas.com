@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panas</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
+
+    <style>
+
+body {
+    font-family: 'Capriola', sans-serif; background: linear-gradient(135deg, #fbf5e9 0%, #FBF5E8 100%);
+}
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            color: #003366;
+        }
+
+        .content>.text,
+        .content>.image {
+            flex: 1 1 50%;
+            
+            align-items: center;
+        }
+
+        .text {
+            padding: 16px;
+        }
+
+        .pequeno {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .grande {
+            text-align: center;
+            font-size: 65px;
+        }
+
+        .mediano {
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .content>.text,
+            .content>.image {
+                flex-basis: 100%;
+               
+            }
+        }
+
+        .w3-button {
+            padding: 16px;
+        }
+
+/*inclusivo hover*/
+p:hover{
+     
+  font-size: 200%;
+} 
+ p{
+    transition: all 0.3s ease;
+ }
+
+
+/*inclusivo img*/
+
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
+}
+
+/* Botón de tipografía para disléxicos */
+.dyslexia-font-btn {
+    background-color: #ff6600; /* Color de fondo */
+    color: white; /* Color del texto/ícono */
+    border: none; /* Sin bordes */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    font-size: 18px; /* Tamaño del texto */
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Alinear contenido verticalmente */
+    gap: 10px; /* Espacio entre ícono y texto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s, color 0.3s; /* Animación de cambio */
+    position: fixed; /* Fijo en la pantalla */
+    top: 60px; /* Ajusta según la posición del modo nocturno */
+    right: 10px; /* Colocado al lado izquierdo del botón de modo oscuro */
+    z-index: 1000; /* Siempre visible */
+}
+
+.dyslexia-font-btn:hover {
+    background-color: #e65c00; /* Cambia a un naranja más oscuro */
+}
+
+/* Tipografía amigable para disléxicos */
+.dyslexia-font * {
+    font-family: 'OpenDyslexic', sans-serif !important; /* Cambiar toda la tipografía */
+}
+
+
+/*modo oscuro*/
+.dark-mode {
+            background-color: #121212;
+            border-radius: ;
+            color: #facea7;
+        }
+
+
+/* Estilo para todo el texto en modo oscuro */
+.dark-mode * {
+    color: #facea7 !important; /* Forzar el color blanco para todo el texto */
+}
+        .dark-mode .w3-bar {
+            background-color: #333333;
+        }
+
+        .dark-mode .w3-button {
+            color: #ffffff;
+        }
+
+        .dark-mode .w3-row {
+            background-color: #1c1c1c;
+        }
+        .dark-mode .w3-text-white {
+            color: #facea7 !important;
+        }
+
+/* Modo oscuro: colores */
+        .dark-mode .w3-bar {
+            background-color: #333;
+        }
+
+        .dark-mode .w3-button {
+            color: #ffffff;
+        }
+
+        .dark-mode .w3-bar-item {
+            color: #facea7;
+        }
+
+        .dark-mode .clientes {
+            color: #facea7;
+        }
+
+        .dark-mode .w3-orange {
+            background-color: #ff6600;
+        }
+
+        .dark-mode .w3-text-white {
+            color: #facea7 !important;
+        }
+
+        /* Botón de modo oscuro */
+        .mode-toggle-btn {
+      background-color: #ff6600; /* Color de fondo */
+      color: white; /* Color del texto/ícono */
+      border: none; /* Sin bordes */
+      border-radius: 50px; /* Bordes redondeados */
+      padding: 10px 20px; /* Espaciado interno */
+      cursor: pointer; /* Cambiar cursor al pasar por encima */
+      font-size: 18px; /* Tamaño del texto */
+      display: flex; /* Usar flexbox */
+      align-items: center; /* Alinear contenido verticalmente */
+      gap: 10px; /* Espacio entre ícono y texto */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+      transition: background-color 0.3s, color 0.3s; /* Animación de cambio */
+      position: fixed; /* Fijo en la pantalla */
+      top: 10px; /* Posición desde arriba */
+      right: 10px; /* Posición desde la derecha */
+      z-index: 1000; /* Siempre visible */
+        }
+
+.mode-toggle-btn:hover {
+      background-color: #e65c00; /* Color de fondo al pasar el cursor */
+  }
+
+  /* Ícono */
+  .mode-toggle-btn i {
+      font-size: 20px; /* Tamaño del ícono */
+
+        /* Otros estilos de contenido */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .content>.text,
+        .content>.image {
+            flex: 1 1 50%;
+            align-items: center;
+        }
+
+        .text {
+            padding: 16px;
+        }
+
+        .pequeno {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .grande {
+            text-align: center;
+            font-size: 65px;
+        }
+
+        .mediano {
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .content>.text,
+            .content>.image {
+                flex-basis: 100%;
+            }
+        }
+
+
+
+    </style>
+
+<script>
+
+function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  /*create lens:*/
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+  /*insert lens:*/
+  img.parentElement.insertBefore(lens, img);
+  /*calculate the ratio between result DIV and lens:*/
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /*set background properties for the result DIV:*/
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /*execute a function when someone moves the cursor over the image, or the lens:*/
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /*and also for touch screens:*/
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image:*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    /*calculate the position of the lens:*/
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /*prevent the lens from being positioned outside the image:*/
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /*set the position of the lens:*/
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /*display what the lens "sees":*/
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+
+
+</head>
+
+<body>
+<!-- Botón para alternar el modo oscuro -->
+    <button class="mode-toggle-btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i>Modo Oscuro</button>
+
+<!-- Botón para cambiar la tipografía -->
+<button class="dyslexia-font-btn" onclick="toggleDyslexiaFont()">
+    <i class="fas fa-font"></i>Disléxicos
+</button>
+
+    <!-- Menú h-->
+    <div class="w3-bar w3-orange w3-large">
+        <span class="w3-bar-item w3-left w3-button w3-padding-16" onclick="toggleMenu()">&#9776;</span>
+    </div>
+
+    <div id="mobileMenu" class="w3-bar-block w3-orange w3-hide">
+        <a href="index.html" class="w3-bar-item w3-button">Inicio</a>
+        <a href="nosotros.html" class="w3-bar-item w3-button">Nosotros</a>
+        <a href="servicios.html" class="w3-bar-item w3-button">Servicios</a>
+        <a href="portafolio.html" class="w3-bar-item w3-button">Portafolio</a>
+        <a href="contactos.html" class="w3-bar-item w3-button">Contacto</a>
+        <a href="clientesvr.html" class="w3-bar-item w3-button">Clientes</a>
+        <a href="cotizaciones.html" class="w3-bar-item w3-button">Cotizaciones</a>
+        <a href="redessociales.html" class="w3-bar-item w3-button">Redes Sociales</a>
+        <a href="porqueelegirnos.html" class="w3-bar-item w3-button">¿Porqué elegirnos?</a>
+    </div>
+
+   
+
+</div>
+
+<!-- Contenido-->
+
+<div class="w3-row  w3-margin-right ">
+    <div  style="color: white;" class="w3-col s6  w3-center ">-</div>
+    <div class="w3-col s6  w3-center ">
+        
+        <p style="color: #ff6600;font-size: 340%;" class="w3-right  w3-margin-right" > <b>PORTAFOLIO</b></p>
+        
+    </div>
+  </div>
+
+
+
+
+  <div class="w3-row">
+    <div class="w3-col s6  w3-center">
+
+
+
+
+
+        <div class="w3-row w3-margin">
+            <div class="w3-col s6  w3-center img-zoom-container ">
+                <img id="myimage" style="width: 80%;" class="w3-round-xxlarge w3-margin" src="img/portafolio1.jpg" alt="">
+                <div id="myresult" class="img-zoom-result"></div>
+
+
+
+                 <br>
+                <h3 style="color: #003366;" class=" clientes  w3-margin  w3-center ">
+            
+        
+                
+                    En colaboración con un destacado artista de maquillaje, se diseñó una campaña visual única. Funcionando la habilidad del maquillaje con conceptos innovadores de diseño gráfico, resultando en  imágenes con creatividad y estilo                </h3>
+            </div>
+
+
+            <div class="w3-col s6  w3-center img-zoom-container">
+                <img id="myimage2" style="width: 80%;" class="w3-round-xxlarge w3-margin" src="img/portafolio2.jpg" alt="">
+                <div id="myresult2" class="img-zoom-result"></div>
+                <br>
+                
+                <h3 style="color: #003366;" class=" clientes  w3-margin  w3-center" >
+            
+        
+
+                
+                    Nos propusimos crear una experiencia de juego única, llena de desafíos y aventuras                
+                    La dedicación y creatividad de nuestro equipo se reflejan en cada detalle del juego, ofreciendo a los jugadores una experiencia inolvidable.
+                </h3>
+           
+                </div>
+          </div>
+
+
+
+
+
+
+    </div>
+    <div class="w3-col s6  w3-center">
+
+        <h1 style="color: #003366;font-size: 400%; " class="w3-center "> <b>Proyectos <br> destacados</b></h1>
+
+
+        <h3 style="color: #003366;" class=" clientes w3-padding-64 w3-margin  w3-center" >
+            Nuestro portafolio destaca proyectos fascinantes y variados.
+             
+              <br>Cada proyecto refleja nuestra capacidad para adaptarnos y sobresalir en diferentes industrias, siempre con un toque creativo y original.           
+        </h3>
+
+            <div style="background-color: #ff6600; color: #003366; margin: 15%; padding: 8%;" class="w3-round-xxlarge">
+             <h2 style="color: #003366;font-size: 200%; " class="w3-center "> <b>¿Qué hicimos?</b></h2>  
+             <br> 
+            Creamos un videojuego inmersivo que combina gráficos innovadores con una narrativa cautivadora, atrayendo tanto a jugadores nuevos como a veteranos. <br> Además, colaboramos con un renombrado artista de maquillaje para diseñar una campaña visual que fusiona el arte del maquillaje con conceptos de diseño gráfico únicos, resultando en una serie de imágenes impactantes y memorables.  
+
+            <div class="w3-center w3-padding-16">
+                <button style="background-color: #003366; color: #ff6600;" class="w3-button w3-round-xxlarge" onclick="document.getElementById('audio1').play()">🎙️ Lectura</button>
+                <audio id="audio1" src="audio/proyecto.mp3"></audio>
+            </div>
+
+            </div>
+    </div>
+  </div>
+<br><br><br>
+  <h1 style="color: #003366;font-size: 800%; " class="w3-center w3-margin-top "> <b>Testimonio de clientes</b> </h1>
+
+
+
+
+  <div class="w3-row w3-margin">
+    <div class="w3-quarter w3-container w3-padding-64">
+        <h3 style="color: #003366;" class=" clientes  w3-margin  w3-center" >
+            
+        
+
+                
+            Su creatividad y atención al detalle hicieron que cada proyecto superara nuestras expectativas. Definitivamente recomendaríamos sus servicios a cualquier empresa que busque destacar visualmente.               
+        </h3>
+        <h1 style="color: #ff6600; font-size: 240%;" class="w3-center" ><b>-Coca-Cola</b></h1>
+
+    </div>
+    <div class="w3-quarter w3-container w3-padding-64">
+        <h3 style="color: #003366;" class=" clientes  w3-margin  w3-center" >
+            
+        
+
+                
+            Colaborar con esta empresa de diseño fue una experiencia realmente destacada. Su equipo de tres expertos logró capturar la esencia y dinámica de nuestra marca Pepsi con un enfoque fresco y creativo.               
+        </h3>
+        <h1 style="color: #ff6600; font-size: 240%;" class="w3-center" ><b>-Pepsi</b></h1>
+
+    </div>
+    <div class="w3-quarter w3-container w3-padding-64">
+        <h3 style="color: #003366;" class=" clientes  w3-margin  w3-center" >
+            
+        
+
+                
+            Trabajar con esta empresa de diseño ha sido una experiencia sumamente gratificante. Los tres expertos que la dirigen lograron captar a la perfección la esencia de Pollos Copacabana, reflejándola en diseños innovadores y atractivos.               
+        </h3>
+        <h1 style="color: #ff6600; font-size: 240%;" class="w3-center" ><b>-Pollos <br>Copacabana</b></h1>
+
+    </div>
+    <div class="w3-quarter w3-container w3-padding-64">
+        <h3 style="color: #003366;" class=" clientes  w3-margin  w3-center" >
+            
+        
+
+                
+            Trabajar con esta empresa de diseño ha sido una experiencia increíble. Los tres creativos que la dirigen lograron capturar la esencia de Cerveza Paceña de una manera fresca y atractiva               
+        </h3>
+        <h1 style="color: #ff6600; font-size: 240%;" class="w3-center" ><b>-Paceña</b></h1>
+
+    </div>
+
+  </div>
+<!-- Footer-->
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("mobileMenu");
+            if (x.classList.contains("w3-show")) {
+                x.classList.remove("w3-show");
+            } else {
+                x.classList.add("w3-show");
+            }
+        }
+
+function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+
+      const button = document.querySelector('.mode-toggle-btn');
+      const icon = button.querySelector('i');
+
+      if (body.classList.contains('dark-mode')) {
+          button.textContent = ' Modo Claro';
+          icon.className = 'fas fa-sun'; // Cambiar al ícono de sol
+      } else {
+          button.textContent = ' Modo Oscuro';
+          icon.className = 'fas fa-moon'; // Cambiar al ícono de luna
+      }
+      button.prepend(icon); // Asegurar que el ícono quede al principio
+  }
+
+function toggleDyslexiaFont() {
+    const body = document.body;
+    body.classList.toggle('dyslexia-font'); // Alternar la clase
+}
+
+
+
+// Initiate zoom effect:
+imageZoom("myimage", "myresult");
+imageZoom("myimage2", "myresult2");
+
+    </script>
+
+    <footer class="w3-container w3-orange w3-padding-16 w3-center">
+        <p>&copy; 2024 PANAS. Todos los derechos reservados.</p>
+        <p>
+            <a href="#" class="w3-button w3-small w3-hover-none w3-text-white">Términos y Condiciones</a> |
+            <a href="#" class="w3-button w3-small w3-hover-none w3-text-white">Política de Privacidad</a>
+        </p>
+        <p>Síguenos en:
+            <a href="https://www.facebook.com/" class="w3-text-white"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/" class="w3-text-white"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+            <a href="https://x.com/?lang=es" class="w3-text-white"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

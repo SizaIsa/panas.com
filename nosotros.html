@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panas</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+
+body {
+    font-family: 'Capriola', sans-serif;
+}
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            color: #003366;
+        }
+
+        .content>.text,
+        .content>.image {
+            flex: 1 1 50%;
+            
+            align-items: center;
+        }
+
+        .text {
+            padding: 16px;
+        }
+
+        .pequeno {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .grande {
+            text-align: center;
+            font-size: 65px;
+        }
+
+        .mediano {
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .content>.text,
+            .content>.image {
+                flex-basis: 100%;
+               
+            }
+        }
+
+        .w3-button {
+            padding: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menú h-->
+    <div class="w3-bar w3-orange w3-large">
+        <span class="w3-bar-item w3-left w3-button w3-padding-16" onclick="toggleMenu()">&#9776;</span>
+    </div>
+
+    <div id="mobileMenu" class="w3-bar-block w3-orange w3-hide">
+        <a href="index.html" class="w3-bar-item w3-button">Inicio</a>
+        <a href="nosotros.html" class="w3-bar-item w3-button">Nosotros</a>
+        <a href="servicios.html" class="w3-bar-item w3-button">Servicios</a>
+        <a href="portafolio.html" class="w3-bar-item w3-button">Portafolio</a>
+        <a href="contactos.html" class="w3-bar-item w3-button">Contacto</a>
+        <a href="clientesvr.html" class="w3-bar-item w3-button">Clientes</a>
+        <a href="cotizaciones.html" class="w3-bar-item w3-button">Cotizaciones</a>
+        <a href="redessociales.html" class="w3-bar-item w3-button">Redes Sociales</a>
+        <a href="porqueelegirnos.html" class="w3-bar-item w3-button">¿Porqué elegirnos?</a>
+    </div>
+
+   
+
+</div>
+
+<!-- Contenido-->
+
+<div class="w3-row">
+    <div  style="color: white;" class="w3-col s6  w3-center ">-</div>
+    <div class="w3-col s6  w3-center">
+        
+        <p style="color: #003366;font-size: 340%;" class="w3-right w3-margin" > <b>Sobre <br>nOsotros</b></p>
+        
+    </div>
+  </div>
+
+
+    <div class="w3-row">
+        <div  style="background-image: url(img/Historia\ de\ la\ empresa.png); background-position-x: center; background-repeat: no-repeat;" class="w3-col l7 s6  w3-center">
+           
+            <h3 style="color: #003366;" class=" clientes w3-padding-64 w3-margin  w3-center" >
+            
+                En 2010, tres amigas con una visión clara y una pasión compartida por el diseño decidieron aventurarse y fundar su propia empresa en La Paz, Bolivia. Comenzaron en un pequeño estudio, un espacio modesto que poco a poco se transformó en un epicentro de creatividad y talento.
+<br>
+Desde sus primeros proyectos, quedó claro que su enfoque innovador y su dedicación al detalle los diferenciaba. Trabajaron incansablemente, no solo para cumplir con las expectativas de sus clientes, sino para superarlas y dejar una marca indeleble en cada proyecto.
+
+A lo largo de los años, su empresa creció. Atrajeron a otros talentos locales que compartían su visión y compromiso con la excelencia. Juntos, enfrentaron desafíos y celebraron victorias, cada una de ellas fortaleciendo el equipo y consolidando su reputación en la industria.
+<br>
+Hoy en día, la empresa es reconocida a nivel internacional. Sus proyectos abarcan desde pequeñas marcas locales hasta grandes empresas globales, y en cada uno de ellos se puede ver el toque distintivo de sus fundadores. Han demostrado que con pasión, creatividad y trabajo en equipo, se puede lograr cualquier cosa.
+
+Su historia es un testimonio de la fuerza de la colaboración y la importancia de seguir tus sueños, sin importar cuán grandes o pequeños sean los comienzos.
+
+            </h3></div>
+       
+                <div class="w3-col l5 s6  w3-center">
+                    
+                    <img style="width: 80%;" class="w3-round" src="img/Nosotros 1.png" alt=""></div>
+      </div>
+ 
+      <br><br><br><br><br>
+
+      <div class="w3-row w3-padding-64 w3-margin">
+        <div class="w3-col s6  w3-padding-16">
+            <h1 style="color: #003366;font-size: 340%; " class="w3-center "> <b>Servicios</b></h1>
+            <p class="w3-padding-16">
+                <h4 style="color: #003366;" class=" w3-left-align w3-margin w3-padding-16 w3-margin" >
+                    Nuestra empresa <b style="color: #ff6600">PANAS</b>, dirigida por tres apasionados creativos, ofrece una gama completa de servicios. Desde <b style="color: #ff6600">branding</b>  y diseño gráfico hasta <b style="color: #ff6600">desarrollo web y marketing digital</b> , nuestro equipo se dedica a transformar tus ideas en realidades impactantes. Nos especializamos en crear experiencias visuales únicas que capturan la esencia de tu marca.
+                    <br><br> Con un enfoque personalizado y atención al detalle, trabajamos contigo en cada paso del proceso para asegurar que tus proyectos destaquen.
+                      En nuestra empresa, la  <b style="color: #ff6600">creatividad</b> y la <b style="color: #ff6600">innovación</b> son los pilares que nos guían.  
+                 
+                </h4>
+            </p>
+            
+        
+           <p class="w3-right-align w3-padding-16 w3-margin-right">
+           
+             <a href="servicios.html" class="w3-bar-item w3-button">             <button style="background-color: #ff6600;" class=" w3-center  w3-button w3-round-xxlarge w3-hover-indigo  w3-margin-left w3-margin-top" style="width:50%"><b>ver mas</b></button></p>
+             </a>
+     
+
+        </div>
+        <div class="w3-col s6  w3-center w3-padding-16">
+            <h1 style="color: #003366; font-size: 340%;" ><b>Portafolio</b></h1>
+            <p class="w3-padding-16">
+                <h4 style="color: #003366;" class=" w3-left-align w3-margin w3-padding-16 w3-margin" >
+                    Nuestro portafolio es una muestra vibrante y diversa de nuestra  <b style="color: #ff6600">creatividad</b> y habilidades. Desde  <b style="color: #ff6600">identidades visuales</b> impactantes hasta desarrollos web innovadores , hemos trabajado en una amplia gama de proyectos para clientes de diferentes industrias. Cada diseño que creamos refleja nuestro compromiso con la <b style="color: #ff6600">excelencia y la originalidad.</b>  Nos especializamos en convertir ideas abstractas en realidades visuales cautivadoras, y nuestro portafolio es testimonio de nuestra capacidad para superar las expectativas de nuestros clientes. La diversidad de nuestros proyectos demuestra nuestra adaptabilidad y dedicación a la calidad.                    
+                 
+                </h4>
+            </p>
+        
+           <p class="w3-right-align w3-padding-16 w3-margin-right">
+            <a href="portafolio.html" class="w3-bar-item w3-button">             <button style="background-color: #ff6600;" class=" w3-center  w3-button w3-round-xxlarge w3-hover-indigo   w3-margin-left w3-margin-top" style="width:50%">
+            <b>ver mas</b></button>
+            </a></p>
+        </div>
+      </div>
+
+     
+ 
+
+
+
+<!-- Footer-->
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("mobileMenu");
+            if (x.classList.contains("w3-show")) {
+                x.classList.remove("w3-show");
+            } else {
+                x.classList.add("w3-show");
+            }
+        }
+    </script>
+
+    <footer class="w3-container w3-orange w3-padding-16 w3-center">
+        <p>&copy; 2024 PANAS. Todos los derechos reservados.</p>
+        <p>
+            <a href="#" class="w3-button w3-small w3-hover-none w3-text-white">Términos y Condiciones</a> |
+            <a href="#" class="w3-button w3-small w3-hover-none w3-text-white">Política de Privacidad</a>
+        </p>
+        <p>Síguenos en:
+            <a href="https://www.facebook.com/" class="w3-text-white"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/" class="w3-text-white"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+            <a href="https://x.com/?lang=es" class="w3-text-white"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
